@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ETS - Modern Web Solution</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">ETS</div>
+                <ul class="nav-menu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="admin.html">Admin Login</a></li>
+                </ul>
+                <button class="menu-toggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background">
+            <div class="gradient-overlay"></div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="title-line">Welcome to</span>
+                    <span class="title-main">Modern Web Solutions</span>
+                </h1>
+                <p class="hero-subtitle">Creating beautiful, responsive, and user-friendly websites that drive results</p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn btn-primary">Get Started</a>
+                    <a href="#portfolio" class="btn btn-secondary">View Work</a>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">About Us</h2>
+                <p class="section-subtitle">We are passionate about creating exceptional digital experiences</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Our Mission</h3>
+                    <p>We specialize in building modern, responsive websites that combine beautiful design with powerful functionality. Our team is dedicated to delivering solutions that not only look great but also perform exceptionally well.</p>
+                    <p>With years of experience in web development, we understand what it takes to create websites that engage users and drive business growth.</p>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">100+</div>
+                        <div class="stat-label">Projects Completed</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">50+</div>
+                        <div class="stat-label">Happy Clients</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">5+</div>
+                        <div class="stat-label">Years Experience</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Services</h2>
+                <p class="section-subtitle">Comprehensive solutions tailored to your needs</p>
+            </div>
+            <div class="services-banner">
+                <div class="service-item" data-service="pvc">
+                    <div class="service-visual">
+                        <div class="service-window">
+                            <div class="window-panel left"></div>
+                            <div class="window-panel right open"></div>
+                        </div>
+                        <div class="service-door">
+                            <div class="door-panel open"></div>
+                        </div>
+                    </div>
+                    <h3 class="service-title">PVC PENCERE KAPI SİSTEMLERİ</h3>
+                </div>
+                <div class="service-item" data-service="balcony">
+                    <div class="service-visual">
+                        <div class="glass-balcony">
+                            <div class="balcony-panel"></div>
+                            <div class="balcony-panel"></div>
+                            <div class="balcony-panel door">
+                                <div class="door-handle"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <h3 class="service-title">CAM BALKON</h3>
+                </div>
+                <div class="service-item" data-service="flyscreen">
+                    <div class="service-visual">
+                        <div class="flyscreen-window">
+                            <div class="window-frame"></div>
+                            <div class="flyscreen-mesh"></div>
+                        </div>
+                    </div>
+                    <h3 class="service-title">SİNEKLİK</h3>
+                </div>
+                <div class="service-item" data-service="shower">
+                    <div class="service-visual">
+                        <div class="shower-cabin">
+                            <div class="shower-panel"></div>
+                            <div class="shower-panel"></div>
+                            <div class="shower-base"></div>
+                            <div class="shower-head"></div>
+                            <div class="shower-controls"></div>
+                        </div>
+                    </div>
+                    <h3 class="service-title">DUŞ VE KÜVET SİSTEMLERİ</h3>
+                </div>
+            </div>
+            
+            <!-- Expandable Detail Sections -->
+            <div class="service-details" id="pvc-details">
+                <div class="detail-content">
+                    <button class="close-details">&times;</button>
+                    <h2>PVC PENCERE KAPI SİSTEMLERİ</h2>
+                    <div class="detail-grid">
+                        <div class="detail-item">
+                            <h4>High Quality Materials</h4>
+                            <p>Premium PVC materials that ensure durability and long-lasting performance. Our windows and doors are designed to withstand harsh weather conditions.</p>
+                        </div>
+                        <div class="detail-item">
+                            <h4>Energy Efficient</h4>
+                            <p>Advanced insulation technology helps reduce energy costs by maintaining optimal indoor temperature throughout the year.</p>
+                        </div>
+                        <div class="detail-item">
+                            <h4>Custom Designs</h4>
+                            <p>Wide range of designs and sizes to match your architectural style and personal preferences.</p>
+                        </div>
+                        <div class="detail-item">
+                            <h4>Easy Maintenance</h4>
+                            <p>Low-maintenance PVC surfaces that are easy to clean and require minimal upkeep over the years.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="service-details" id="balcony-details">
+                <div class="detail-content">
+                    <button class="close-details">&times;</button>
+                    <h2>CAM BALKON</h2>
+                    <div class="detail-grid">
+                        <div class="detail-item">
+                            <h4>Premium Glass</h4>
+                            <p>High-quality tempered glass panels that provide excellent visibility while ensuring safety and durability.</p>
+                        </div>
+                        <div class="detail-item">
+                            <h4>Weather Resistant</h4>
+                            <p>Designed to withstand all weather conditions, protecting your balcony space year-round.</p>
+                        </div>
+                        <div class="detail-item">
+                            <h4>Modern Design</h4>
+                            <p>Sleek, contemporary designs that enhance your home's aesthetic appeal and increase property value.</p>
+                        </div>
+                        <div class="detail-item">
+                            <h4>Professional Installation</h4>
+                            <p>Expert installation services ensuring perfect fit and optimal performance of your glass balcony system.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="service-details" id="flyscreen-details">
+                <div class="detail-content">
+                    <button class="close-details">&times;</button>
+                    <h2>SİNEKLİK</h2>
+                    <div class="detail-grid">
+                        <div class="detail-item">
+                            <h4>Insect Protection</h4>
+                            <p>Fine mesh screens that effectively keep insects out while allowing fresh air to flow freely into your home.</p>
+                        </div>
+                        <div class="detail-item">
+                            <h4>Durable Mesh</h4>
+                            <p>High-quality mesh materials that resist tearing and maintain their effectiveness over time.</p>
+                        </div>
+                        <div class="detail-item">
+                            <h4>Easy Installation</h4>
+                            <p>Simple installation process that fits perfectly with your existing windows and doors.</p>
+                        </div>
+                        <div class="detail-item">
+                            <h4>Low Visibility</h4>
+                            <p>Nearly invisible mesh that doesn't obstruct your view while providing excellent protection.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="service-details" id="shower-details">
+                <div class="detail-content">
+                    <button class="close-details">&times;</button>
+                    <h2>DUŞ VE KÜVET SİSTEMLERİ</h2>
+                    <div class="detail-grid">
+                        <div class="detail-item">
+                            <h4>Luxury Design</h4>
+                            <p>Premium shower and bathtub systems featuring modern designs and high-end materials for a spa-like experience.</p>
+                        </div>
+                        <div class="detail-item">
+                            <h4>Multiple Features</h4>
+                            <p>Advanced features including body jets, rainfall showerheads, and temperature control systems.</p>
+                        </div>
+                        <div class="detail-item">
+                            <h4>Easy Cleaning</h4>
+                            <p>Non-porous surfaces and smart design features that make cleaning and maintenance effortless.</p>
+                        </div>
+                        <div class="detail-item">
+                            <h4>Custom Solutions</h4>
+                            <p>Tailored solutions to fit any bathroom size and layout, maximizing your space efficiently.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Portfolio</h2>
+                <p class="section-subtitle">Some of our recent work</p>
+            </div>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <div class="portfolio-overlay">
+                            <a href="#" class="portfolio-link">View Project</a>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>E-Commerce Platform</h3>
+                        <p>Modern shopping experience</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <div class="portfolio-overlay">
+                            <a href="#" class="portfolio-link">View Project</a>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Corporate Website</h3>
+                        <p>Professional business presence</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <div class="portfolio-overlay">
+                            <a href="#" class="portfolio-link">View Project</a>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Portfolio Site</h3>
+                        <p>Creative showcase</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <div class="portfolio-overlay">
+                            <a href="#" class="portfolio-link">View Project</a>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Blog Platform</h3>
+                        <p>Content management system</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="section-subtitle">Let's discuss your next project</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">📧</div>
+                        <div>
+                            <h3>Email</h3>
+                            <p>info@ets.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📱</div>
+                        <div>
+                            <h3>Phone</h3>
+                            <p>+1 (555) 123-4567</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div>
+                            <h3>Address</h3>
+                            <p>123 Web Street, Digital City</p>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="subject" name="subject" placeholder="Subject" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>ETS</h3>
+                    <p>Creating exceptional digital experiences since 2020</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook">Facebook</a>
+                        <a href="#" aria-label="Twitter">Twitter</a>
+                        <a href="#" aria-label="Instagram">Instagram</a>
+                        <a href="#" aria-label="LinkedIn">LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 ETS. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
