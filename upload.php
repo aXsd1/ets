@@ -1,3 +1,10 @@
+<?php
+session_start();
+if (!isset($_SESSION['admin_logged_in']) || !$_SESSION['admin_logged_in']) {
+    header('Location: admin.html');
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,7 +27,7 @@
     </nav>
     <div class="upload-container">
         <h2 class="upload-title">Upload New Project</h2>
-        <form id="upload-form">
+        <form id="upload-form" action="upload_project.php" method="POST" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="thumbnail">Project Thumbnail</label>
                 <input type="file" id="thumbnail" name="thumbnail" accept="image/*" required>

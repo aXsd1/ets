@@ -136,7 +136,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// Form submission handler
+/* // Form submission handler
 const contactForm = document.getElementById('contactForm');
 
 contactForm.addEventListener('submit', (e) => {
@@ -158,7 +158,7 @@ contactForm.addEventListener('submit', (e) => {
     
     // Reset form
     contactForm.reset();
-});
+}); */
 
 // Add active state to navigation links based on scroll position
 const sections = document.querySelectorAll('section[id]');
@@ -210,4 +210,35 @@ const debouncedScroll = debounce(() => {
 }, 10);
 
 window.addEventListener('scroll', debouncedScroll);
+
+// Testimonial slider logic (run immediately for compatibility with scripts at end of body)
+(function() {
+    const slider = document.querySelector('.testimonial-slider');
+    const items = document.querySelectorAll('.testimonial-slider .testimonial-item');
+    const prevBtn = document.querySelector('.testimonial-slider-btn-prev');
+    const nextBtn = document.querySelector('.testimonial-slider-btn-next');
+    if (!slider || !prevBtn || !nextBtn || !items.length) return;
+
+    function getItemWidth() {
+        if (!items[0]) return 0;
+        const style = window.getComputedStyle(items[0]);
+        return items[0].offsetWidth + parseInt(style.marginRight);
+    }
+    function updateButtons() {
+        if (!slider) return;
+        const maxScroll = slider.scrollWidth - slider.clientWidth - 2;
+        prevBtn.disabled = slider.scrollLeft <= 2;
+        nextBtn.disabled = slider.scrollLeft >= maxScroll;
+    }
+    function slide(dir) {
+        const itemWidth = getItemWidth();
+        slider.scrollBy({ left: dir * itemWidth, behavior: 'smooth' });
+        setTimeout(updateButtons, 400);
+    }
+    prevBtn.addEventListener('click', function() { slide(-1); });
+    nextBtn.addEventListener('click', function() { slide(1); });
+    slider.addEventListener('scroll', updateButtons);
+    window.addEventListener('resize', updateButtons);
+    setTimeout(updateButtons, 600);
+})();
 
