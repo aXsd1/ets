@@ -8,10 +8,10 @@ if (!$projects) {
 }
 foreach ($projects as $project): ?>
     <div class="project-card" style="background-image:url('<?php echo htmlspecialchars($project['thumbnail_path']); ?>')">
-        <div class="project-info-bg">
+        <!-- <div class="project-info-bg">
             <p><strong>Description:</strong> <?php echo htmlspecialchars($project['description']); ?></p>
             <p><strong>Start:</strong> <?php echo htmlspecialchars($project['start_date']); ?> &ndash; <strong>Finish:</strong> <?php echo htmlspecialchars($project['finish_date']); ?></p>
-        </div>
+        </div> -->
     </div>
 <?php endforeach; ?>
 <a href="list_projects.php" style="display:block;text-decoration:none;">
