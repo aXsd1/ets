@@ -12,7 +12,7 @@ document.querySelectorAll('.service-item').forEach(item => {
         // Show selected details
         if (detailsSection) {
             detailsSection.classList.add('active');
-            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+            //document.body.style.overflow = 'hidden'; // Prevent background scrolling
         }
     });
 });

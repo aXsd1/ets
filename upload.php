@@ -11,8 +11,8 @@ if (!isset($_SESSION['admin_logged_in']) || !$_SESSION['admin_logged_in']) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Upload Project - ETS</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="upload.css">
+    <link rel="stylesheet" href="src/css/styles.css">
+    <link rel="stylesheet" href="src/css/upload.css">
 </head>
 <body>
     <nav class="navbar">

@@ -1,0 +1,57 @@
+.modern-project-card {
+    background: white;
+    border-radius: 1.2em;
+    box-shadow: 0 6px 32px #0001, 0 1.5px 4px #0002;
+    display: flex;
+    gap: 0;
+    overflow: hidden;
+    margin-bottom: 2.5rem;
+    min-height: 320px;
+    max-width: 840px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.modern-project-images { flex: 2 1 0; display: flex; flex-direction: column; align-items: center; min-width: 0; background: #f5f6ff; justify-content: center; }
+.modern-project-thumb {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    border-bottom: 1px solid #eee;
+    background: #ddd;
+    transition: box-shadow 0.3s;
+    margin-bottom: 1.1em;
+    border-radius: 0 0 0 16px;
+    display: block;
+    max-width: 370px;
+}
+.modern-gallery { display: flex; gap: 7px; padding-bottom: 5px; }
+.modern-gallery-img {
+    width: 54px; height: 54px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 1.5px 8px #0001;
+    cursor: pointer;
+    border: 2px solid #fff;
+    background: #f6f6f6;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+.modern-gallery-img.active, .modern-gallery-img:hover {
+    border-color: var(--primary-color);
+    box-shadow: 0 2px 12px #6366f133, 0 0px 0px #0000;
+    z-index: 2;
+}
+.modern-project-info { flex: 1 1 240px; background: #fafbfc; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; min-width: 180px; padding: 34px 23px 30px 23px; border-left: 1px solid #eceaff; }
+.modern-project-info p {
+    color: #444;
+    margin-bottom: 0.7em;
+    font-size: 1.09em;
+    word-break: break-word;
+}
+.modern-project-info strong { color: var(--primary-color); }
+@media(max-width: 800px) {
+  .modern-project-card { flex-direction: column; max-width: 98vw; }
+  .modern-project-info { border-left: none; border-top: 1px solid #eceaff; width: 100%; padding: 19px 11px 18px 11px; }
+  .modern-project-images { width: 100%; }
+  .modern-project-thumb { max-width: 99vw; border-radius: 0; }
+  .modern-gallery { justify-content: flex-start; }
+}

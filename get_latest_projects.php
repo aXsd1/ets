@@ -14,7 +14,7 @@ foreach ($projects as $project): ?>
         </div> -->
     </div>
 <?php endforeach; ?>
-<a href="list_projects.php" style="display:block;text-decoration:none;">
+<a href="all.php" style="display:block;text-decoration:none;">
 <div class="project-card" style="display:flex;justify-content:center;align-items:center;min-height:280px;background:linear-gradient(135deg,var(--primary-color),var(--secondary-color));color:#fff;font-size:1.45rem;text-align:center;font-weight:600;box-shadow:var(--shadow-md);border-radius:1rem;transition:box-shadow .2s;cursor:pointer;">
   <span style="display:block;width:100%;"><span style="font-size:2.5em;line-height:1;display:block;margin-bottom:14px;">&#128065;</span> Tüm Projeleri Gör</span>
 </div>
