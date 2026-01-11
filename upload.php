@@ -29,12 +29,8 @@ if (!isset($_SESSION['admin_logged_in']) || !$_SESSION['admin_logged_in']) {
         <h2 class="upload-title">Upload New Project</h2>
         <form id="upload-form" action="upload_project.php" method="POST" enctype="multipart/form-data">
             <div class="form-group">
-                <label for="thumbnail">Project Thumbnail</label>
-                <input type="file" id="thumbnail" name="thumbnail" accept="image/*" required>
-            </div>
-            <div class="form-group">
-                <label for="photos">Project Photos</label>
-                <input type="file" id="photos" name="photos" accept="image/*" multiple required>
+                <label for="photos">Proje Fotoğrafları</label>
+                <input type="file" id="photos" name="photos[]" accept="image/*" multiple required>
             </div>
             <div class="form-group">
                 <label for="description">Project Description</label>

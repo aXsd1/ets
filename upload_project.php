@@ -11,34 +11,47 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $description = $_POST['description'] ?? '';
     $start_date = $_POST['start-date'] ?? '';
     $finish_date = $_POST['finish-date'] ?? '';
-    // Upload thumbnail
-    $thumbFile = $_FILES['thumbnail'] ?? null;
-    if (!$thumbFile || $thumbFile['error'] !== 0) {
-        echo 'Error uploading thumbnail.';
+    
+    // Upload photos first, use first photo as thumbnail
+    $photos = $_FILES['photos'] ?? null;
+    if (!$photos || !isset($photos['tmp_name']) || empty($photos['tmp_name'][0])) {
+        echo 'En az bir fotoğraf yüklemelisiniz.';
         exit();
     }
-    $thumbPath = 'uploads/' . uniqid('thumb_') . basename($thumbFile['name']);
-    if (!move_uploaded_file($thumbFile['tmp_name'], $thumbPath)) {
-        echo 'Failed to move thumbnail.';
+    
+    $tmp_names = is_array($photos['tmp_name']) ? $photos['tmp_name'] : [$photos['tmp_name']];
+    $names = is_array($photos['name']) ? $photos['name'] : [$photos['name']];
+    $errors = is_array($photos['error']) ? $photos['error'] : [$photos['error']];
+    
+    // First photo will be used as thumbnail
+    $thumbPath = '';
+    $photoPaths = [];
+    
+    foreach ($tmp_names as $idx => $tmpName) {
+        if ($tmpName === '' || !isset($errors[$idx]) || $errors[$idx] !== 0) continue;
+        $photoPath = 'uploads/' . uniqid('photo_') . basename($names[$idx]);
+        if (move_uploaded_file($tmpName, $photoPath)) {
+            if ($thumbPath === '') {
+                $thumbPath = $photoPath; // First photo is thumbnail
+            }
+            $photoPaths[] = $photoPath;
+        }
+    }
+    
+    if (empty($thumbPath)) {
+        echo 'Fotoğraf yüklenirken hata oluştu.';
         exit();
     }
+    
     // Insert project
     $stmt = $pdo->prepare('INSERT INTO projects (thumbnail_path, description, start_date, finish_date) VALUES (?, ?, ?, ?)');
     $stmt->execute([$thumbPath, $description, $start_date, $finish_date]);
     $project_id = $pdo->lastInsertId();
-    // Upload and insert photos
-    $photos = $_FILES['photos'] ?? null;
-    if ($photos && isset($photos['tmp_name'])) {
-        $tmp_names = is_array($photos['tmp_name']) ? $photos['tmp_name'] : [$photos['tmp_name']];
-        $names = is_array($photos['name']) ? $photos['name'] : [$photos['name']];
-        foreach ($tmp_names as $idx => $tmpName) {
-            if ($tmpName === '') continue;
-            $photoPath = 'uploads/' . uniqid('photo_') . basename($names[$idx]);
-            if (move_uploaded_file($tmpName, $photoPath)) {
-                $stmt = $pdo->prepare('INSERT INTO project_photos (project_id, photo_path) VALUES (?, ?)');
-                $stmt->execute([$project_id, $photoPath]);
-            }
-        }
+    
+    // Insert photo records
+    foreach ($photoPaths as $photoPath) {
+        $stmt = $pdo->prepare('INSERT INTO project_photos (project_id, photo_path) VALUES (?, ?)');
+        $stmt->execute([$project_id, $photoPath]);
     }
     echo 'Project uploaded successfully!';
     exit();
