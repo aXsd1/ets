@@ -23,7 +23,7 @@ $photos = $stmt->fetchAll();
     <nav class="navbar">
         <div class="container">
             <div class="nav-wrapper">
-                <div class="logo">ETS</div>
+                <div class="logo"><img id="logo_img" src="src/img/logo.png" alt="logo" srcset=""></div>
                 <ul class="nav-menu">
                     <li><a href="index.html">Ana sayfa</a></li>
                 </ul>
@@ -58,6 +58,16 @@ $photos = $stmt->fetchAll();
             </div>
             <?php endforeach; ?>
         </div>
+    </div>
+
+    <!-- Ana Menüye Dön Butonu -->
+    <div class="back-to-menu-container">
+        <a href="index.html" class="back-to-menu-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m15 18-6-6 6-6"></path>
+            </svg>
+            Ana Menüye Dön
+        </a>
     </div>
 
     <!-- Lightbox Modal -->

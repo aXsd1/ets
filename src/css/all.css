@@ -350,3 +350,46 @@ body.all-page .footer {
         height: 16px;
     }
 }
+
+/* Back to Menu Button */
+.back-to-menu-container {
+    display: flex;
+    justify-content: center;
+    padding: 3rem 1rem;
+    background: #ffffff;
+}
+
+.back-to-menu-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 1rem 2rem;
+    background: linear-gradient(135deg, var(--primary-color, #6366f1), #a855f7);
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 50px;
+    box-shadow: 0 4px 20px rgba(99, 102, 241, 0.35);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.back-to-menu-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(99, 102, 241, 0.5);
+}
+
+.back-to-menu-btn svg {
+    transition: transform 0.3s ease;
+}
+
+.back-to-menu-btn:hover svg {
+    transform: translateX(-4px);
+}
+
+@media (max-width: 480px) {
+    .back-to-menu-btn {
+        padding: 0.85rem 1.5rem;
+        font-size: 1rem;
+    }
+}
