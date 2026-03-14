@@ -53,7 +53,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $stmt = $pdo->prepare('INSERT INTO project_photos (project_id, photo_path) VALUES (?, ?)');
         $stmt->execute([$project_id, $photoPath]);
     }
-    echo 'Project uploaded successfully!';
+    echo 'basari ile yuklendi';
     exit();
 } else {
     http_response_code(405);
