@@ -1,0 +1,408 @@
+/* =========================================================
+   ETS - Mobil Uyumluluk Düzeltmeleri
+   Bu dosyayı styles.css'den SONRA ekleyin:
+   <link rel="stylesheet" href="src/css/mobile-fixes.css">
+   ========================================================= */
+
+/* ── GLOBAL ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+img, iframe, video {
+  max-width: 100%;
+}
+
+/* ── NAVBAR / HAMBURGER MENÜ ── */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  z-index: 1001;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 26px;
+  height: 2px;
+  background: currentColor;
+  border-radius: 2px;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+/* Açık durum */
+.menu-toggle.active span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+.menu-toggle.active span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: flex;
+  }
+
+  .nav-wrapper {
+    position: relative;
+  }
+
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    left: 0;
+    background: rgba(255, 255, 255, 0.97);
+    backdrop-filter: blur(12px);
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+    padding: 1rem 0;
+    z-index: 1000;
+    list-style: none;
+    margin: 0;
+  }
+
+  .nav-menu.active {
+    display: flex;
+  }
+
+  .nav-menu li {
+    width: 100%;
+  }
+
+  .nav-menu a {
+    display: block;
+    padding: 0.75rem 1.5rem;
+    color: #1f2937 !important;
+    font-weight: 500;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+    transition: background 0.2s;
+  }
+
+  .nav-menu a:hover {
+    background: rgba(102,126,234,0.08);
+    color: #667eea !important;
+  }
+
+  .nav-menu li:last-child a {
+    border-bottom: none;
+  }
+}
+
+/* ── HERO ── */
+@media (max-width: 768px) {
+  .hero {
+    min-height: 80vh;
+    padding: 0 1rem;
+  }
+
+  .hero-title {
+    font-size: clamp(2rem, 8vw, 3.5rem) !important;
+    line-height: 1.15;
+  }
+
+  .hero-subtitle {
+    font-size: clamp(1rem, 4vw, 1.25rem) !important;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .hero-buttons .btn {
+    width: 100%;
+    max-width: 280px;
+    text-align: center;
+  }
+}
+
+/* ── HAKKIMIZDA ── */
+@media (max-width: 768px) {
+  .about-content {
+    flex-direction: column !important;
+    gap: 2rem;
+  }
+
+  .about-text {
+    width: 100%;
+  }
+
+  .about-stats {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+  }
+
+  .stat-item {
+    flex: 1 1 calc(50% - 0.5rem);
+    min-width: 120px;
+  }
+}
+
+/* ── SERVİSLER BANNER ── */
+@media (max-width: 768px) {
+  .services-banner {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 1rem !important;
+    padding: 1.5rem 1rem !important;
+  }
+
+  .service-item {
+    width: 100% !important;
+    padding: 1rem 0.75rem !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+  }
+
+  /* Görsel alanını küçült */
+  .service-visual {
+    height: 100px !important;
+    width: 100% !important;
+    margin-bottom: 0.75rem !important;
+    transform: scale(0.7) !important;
+    transform-origin: center center !important;
+  }
+
+  /* Başlık taşmasın, kırpılmasın */
+  .service-title {
+    font-size: 0.65rem !important;
+    letter-spacing: 0.03em !important;
+    line-height: 1.4 !important;
+    word-break: break-word !important;
+    hyphens: manual !important;
+    text-align: center !important;
+    max-width: 100% !important;
+    white-space: normal !important;
+    overflow: visible !important;
+  }
+}
+
+/* ── SERVİS DETAYI ── */
+@media (max-width: 768px) {
+  .service-details .detail-content {
+    padding: 1.5rem 1rem;
+  }
+
+  .detail-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ── PORTFÖY ── */
+@media (max-width: 768px) {
+  .portfolio-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 0.75rem;
+  }
+
+  .project-card {
+    min-height: 180px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .portfolio-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .project-card {
+    min-height: 220px !important;
+  }
+}
+
+/* ── TESTİMONİALLAR ── */
+@media (max-width: 768px) {
+  .testimonials-grid {
+    gap: 1rem;
+  }
+
+  .testimonial-item {
+    padding: 1.25rem 1rem;
+  }
+
+  .testimonial-slider-btn {
+    display: flex;
+    width: 36px;
+    height: 36px;
+    font-size: 1.1rem;
+  }
+}
+
+/* ── İLETİŞİM ── */
+@media (max-width: 768px) {
+  .contact-content {
+    flex-direction: column !important;
+    gap: 1.5rem;
+  }
+
+  .contact-info {
+    width: 100%;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1rem;
+  }
+
+  /* İletişim kartları yan yana değil, alt alta */
+  .contact-item {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center;
+    width: 100% !important;
+    padding: 1.25rem 1rem !important;
+  }
+
+  .contact-item > div {
+    width: 100%;
+  }
+
+  .contact-item h3 {
+    font-size: 1rem;
+    margin-top: 0.5rem;
+  }
+
+  .contact-item p {
+    font-size: 0.95rem;
+    word-break: break-all;
+  }
+
+  .contact-icon {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  /* Google Maps iframe düzeltmesi */
+  .contact-info iframe,
+  iframe[src*="google.com/maps"] {
+    width: 100% !important;
+    height: 260px !important;
+    border-radius: 12px;
+    display: block;
+    margin-top: 0.5rem;
+  }
+}
+
+/* ── FOOTER ── */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column !important;
+    gap: 1.5rem;
+    text-align: center;
+  }
+
+  .footer-section {
+    width: 100%;
+  }
+
+  .footer-section ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.25rem 1rem;
+    padding: 0;
+    list-style: none;
+  }
+
+  .social-links {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+}
+
+/* ── WHATSAPP BUTONU ── */
+@media (max-width: 768px) {
+  .whatsappclass {
+    bottom: 1rem;
+    right: 1rem;
+  }
+
+  .whatsapp-btn img {
+    width: 48px;
+    height: 48px;
+  }
+}
+
+/* ── GENEL SECTION PADDING ── */
+@media (max-width: 768px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  section {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+  }
+
+  .section-title {
+    font-size: clamp(1.5rem, 6vw, 2.5rem) !important;
+  }
+
+  .section-subtitle {
+    font-size: clamp(0.9rem, 3.5vw, 1.1rem) !important;
+  }
+}
+
+/* ── LIGHTBOX (all.php) ── */
+@media (max-width: 768px) {
+  .lightbox-content {
+    width: 95vw;
+    max-height: 90vh;
+    padding: 1rem;
+  }
+
+  .lightbox-info {
+    padding: 0.75rem;
+  }
+
+  .lightbox-nav-btn {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+/* ── FOTOĞRAF GRID (all.php) ── */
+@media (max-width: 768px) {
+  .photo-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .photo-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ── UPLOAD FORMU ── */
+@media (max-width: 768px) {
+  .upload-container {
+    padding: 1rem;
+    margin: 80px 1rem 2rem;
+  }
+
+  .form-group-row {
+    flex-direction: column !important;
+    gap: 1rem;
+  }
+}
